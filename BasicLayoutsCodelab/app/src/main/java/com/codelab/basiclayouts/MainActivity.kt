@@ -37,6 +37,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
@@ -85,11 +86,13 @@ fun SearchBar(
 fun AlignYourBodyElement(
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier){
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
             painter = painterResource(id = R.drawable.ab1_inversions),
             contentDescription = null,
-            modifier = Modifier.size(88.dp).clip(CircleShape),
+            modifier = Modifier
+                .size(88.dp)
+                .clip(CircleShape),
             contentScale = ContentScale.Crop
         )
         Text(text = stringResource(id = R.string.ab1_inversions))
