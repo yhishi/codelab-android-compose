@@ -234,7 +234,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 @Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
     NavigationBar(
-        modifier = modifier
+        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        modifier = modifier,
     ) {
         NavigationBarItem(
             icon = {
