@@ -27,6 +27,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
@@ -171,12 +172,16 @@ fun FavoriteCollectionsGrid(
 ) {
     LazyHorizontalGrid(
         rows = GridCells.Fixed(2),
-        modifier = modifier
+        modifier = modifier.height(168.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp), // 両端のPadding
+        horizontalArrangement = Arrangement.spacedBy(16.dp), // 水平方向の間隔
+        verticalArrangement = Arrangement.spacedBy(16.dp), // 垂直方向の間隔
     ) {
         items(favoriteCollectionsData) { item ->
             FavoriteCollectionCard(
                 drawableId = item.drawable,
                 textId = item.text,
+                modifier = Modifier.height(80.dp), // FavoriteCollectionCardの高さ
             )
         }
     }
