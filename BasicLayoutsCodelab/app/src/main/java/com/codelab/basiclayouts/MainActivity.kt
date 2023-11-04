@@ -84,18 +84,20 @@ fun SearchBar(
 // Step: Align your body - Alignment
 @Composable
 fun AlignYourBodyElement(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    @DrawableRes drawable: Int,
+    @StringRes text: Int
 ) {
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
-            painter = painterResource(id = R.drawable.ab1_inversions),
+            painter = painterResource(id = drawable),
             contentDescription = null,
             modifier = Modifier
                 .size(88.dp)
                 .clip(CircleShape),
             contentScale = ContentScale.Crop
         )
-        Text(text = stringResource(id = R.string.ab1_inversions))
+        Text(text = stringResource(id = text))
     }
 }
 
@@ -201,7 +203,9 @@ fun SearchBarPreview() {
 fun AlignYourBodyElementPreview() {
     MySootheTheme {
         AlignYourBodyElement(
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(8.dp),
+            text = R.string.ab1_inversions,
+            drawable = R.drawable.ab1_inversions,
         )
     }
 }
